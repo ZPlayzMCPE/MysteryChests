@@ -32,12 +32,7 @@ use pocketmine\level\particle\DustParticle;
 class Main extends PluginBase implements Listener{
 
   public function onEnable(){
-    @mkdir($this->getDataFolder());
-    $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
-    $config->save();
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
-    //$this->economy = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
-    //$this->api = EconomyAPI::getInstance ();
   }
 
   public function onDeath(PlayerDeathEvent $event){
@@ -46,6 +41,7 @@ class Main extends PluginBase implements Listener{
     if($entity instanceof Player){
        if($cause instanceof Player){
         $killer->getInventory()->addItem(Item::get(388,0,1));
+        $killer->sendMessage(C::GREEN . "You have 1 Gamelet");
     }
   }
 }
@@ -83,22 +79,28 @@ class Main extends PluginBase implements Listener{
         $prize = rand(1,6);
         switch($prize){
         case 1:
-          $inventory->addItem(Item::get(293,0,1));
+          EconomyAPI::getInstance()->addMoney($player, "50");
+          $player->sendMessage(C::RED . C::BOLD . "You won 50$");
         break;
         case 2:
-          $inventory->addItem(Item::get(293,0,1));
+          EconomyAPI::getInstance()->addMoney($player, "150");
+          $player->sendMessage(C::RED . C::BOLD . "You won 150$");
         break;   
         case 3:
-          $inventory->addItem(Item::get(293,0,1));
+          EconomyAPI::getInstance()->addMoney($player, "200");
+          $player->sendMessage(C::RED . C::BOLD . "You won 200$");
         break;   
         case 4:
-          $inventory->addItem(Item::get(293,0,1));
+          EconomyAPI::getInstance()->addMoney($player, "100");
+          $player->sendMessage(C::RED . C::BOLD . "You won 100$");
         break;      
         case 5:
-          $inventory->addItem(Item::get(293,0,1));
+          EconomyAPI::getInstance()->addMoney($player, "25");
+          $player->sendMessage(C::RED . C::BOLD . "You won 25$");
         break;     
         case 6:
-          $inventory->addItem(Item::get(293,0,1));  
+          EconomyAPI::getInstance()->addMoney($player, "500"); 
+          $player->sendMessage(C::RED . C::BOLD . "You won 500$");
         break;
     }
   }
