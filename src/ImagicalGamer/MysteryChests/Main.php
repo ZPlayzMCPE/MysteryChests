@@ -1,5 +1,5 @@
 <?php
-namespace ImagicalGamer\MysteryChest;
+namespace ImagicalGamer\MysteryChests;
 
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
