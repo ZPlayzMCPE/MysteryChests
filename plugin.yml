@@ -1,6 +1,6 @@
 name: MysteryChests
 author: ImagicalGamer & Zeao
-version: 0.0.5
+version: 0.0.10
 api: [3.0.0-ALPHA6, 3.0.1]
 main: ImagicalGamer\MysteryChests\Main
 load: STARTUP
