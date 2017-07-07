@@ -1,6 +1,6 @@
-name: MysteryChest
+name: MysteryChests
 author: ImagicalGamer
 version: 0.0.4
 api: ["2.0.0"]
-main: ImagicalGamer\MysteryChest\Main
+main: ImagicalGamer\MysteryChests\Main
 load: STARTUP
